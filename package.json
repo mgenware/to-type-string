@@ -1,0 +1,45 @@
+{
+  "name": "to-type-string",
+  "version": "0.0.0",
+  "description": "Get type description of a JavaScript variable",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "author": "Mgen (https://www.mgenware.com)",
+  "homepage": "https://github.com/mgenware/to-type-string",
+  "bugs": "https://github.com/mgenware/to-type-string/issues",
+  "keywords": [
+    "gettype",
+    "typeof",
+    "debug"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mgenware/to-type-string.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn run clean && yarn run compile && yarn run lint && yarn run t",
+    "t": "jest",
+    "build": "yarn test",
+    "compile": "tsc -b tests",
+    "dev": "yarn run clean && tsc -b tests -w",
+    "prepublishOnly": "yarn run test",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "clean": "rimraf dist && rimraf dist_tests"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.10",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  }
+}
