@@ -33,7 +33,7 @@ test('Infinity', () => {
 });
 
 test('Array', () => {
-  expect(t([])).toBe('array');
+  expect(t([])).toBe('Array');
 });
 
 test('Date', () => {

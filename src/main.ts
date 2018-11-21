@@ -6,7 +6,7 @@ export default function toTypeString(obj: any): string {
   const type = typeof obj;
   if (type === 'object') {
     if (Array.isArray(obj)) {
-      return 'array';
+      return 'Array';
     }
     if (obj.constructor && obj.constructor.name) {
       return obj.constructor.name;
