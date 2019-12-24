@@ -30,6 +30,11 @@
   "engines": {
     "node": ">=8.0.0"
   },
+  "files": [
+    "/dist/**/*.js",
+    "/dist/**/*.ts",
+    "/dist/**/*.map"
+  ],
   "jest": {
     "testRegex": "/dist_tests/.*(\\.|/)(test|spec)\\.jsx?$"
   },
