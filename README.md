@@ -1,16 +1,19 @@
 # to-type-string
+
 Get type description of a JavaScript variable
 
 ## Installation
+
 ```sh
 yarn add to-type-string
 ```
 
 ## Usage
+
 ```js
 import toTypeString from 'to-type-string';
 
-class MyClass { }
+class MyClass {}
 
 toTypeString(null); // null
 toTypeString(undefined); // undefined
@@ -22,3 +25,4 @@ toTypeString(NaN); // number
 toTypeString(new Uint16Array(10)); // Uint16Array
 toTypeString(new Date()); // Date
 toTypeString(new Object()); // Object
+```
