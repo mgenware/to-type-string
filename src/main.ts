@@ -1,4 +1,4 @@
-// tslint:disable-next-line no-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function toTypeString(obj: any): string {
   try {
     if (obj === null) {
@@ -9,6 +9,7 @@ export default function toTypeString(obj: any): string {
       if (Array.isArray(obj)) {
         return 'Array';
       }
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
       if (obj.constructor && obj.constructor.name) {
         return obj.constructor.name;
       }

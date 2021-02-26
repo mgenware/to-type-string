@@ -1,57 +1,61 @@
-import t from '../';
+import * as assert from 'assert';
+import t from '../dist/main.js';
 
-test('undefined', () => {
-  expect(t(undefined)).toBe('undefined');
+it('undefined', () => {
+  assert.strictEqual(t(undefined), 'undefined');
 });
 
-test('null', () => {
-  expect(t(null)).toBe('null');
+it('null', () => {
+  assert.strictEqual(t(null), 'null');
 });
 
-test('object', () => {
-  expect(t(new Object())).toBe('Object');
+it('object', () => {
+  assert.strictEqual(t({}), 'Object');
 });
 
-test('func', () => {
-  expect(t(() => 1)).toBe('function');
+it('func', () => {
+  assert.strictEqual(
+    t(() => 1),
+    'function',
+  );
 });
 
-test('number', () => {
-  expect(t(-1)).toBe('number');
+it('number', () => {
+  assert.strictEqual(t(-1), 'number');
 });
 
-test('0', () => {
-  expect(t(0)).toBe('number');
+it('0', () => {
+  assert.strictEqual(t(0), 'number');
 });
 
-test('NaN', () => {
-  expect(t(NaN)).toBe('number');
+it('NaN', () => {
+  assert.strictEqual(t(NaN), 'number');
 });
 
-test('Infinity', () => {
-  expect(t(Infinity)).toBe('number');
+it('Infinity', () => {
+  assert.strictEqual(t(Infinity), 'number');
 });
 
-test('Array', () => {
-  expect(t([])).toBe('Array');
+it('Array', () => {
+  assert.strictEqual(t([]), 'Array');
 });
 
-test('Date', () => {
-  expect(t(new Date())).toBe('Date');
+it('Date', () => {
+  assert.strictEqual(t(new Date()), 'Date');
 });
 
 class MyCls {
   id = 1;
 }
 
-test('ES6 class', () => {
-  expect(t(new MyCls())).toBe('MyCls');
+it('ES6 class', () => {
+  assert.strictEqual(t(new MyCls()), 'MyCls');
 });
 
-test('Typed array', () => {
-  expect(t(new Uint16Array(10))).toBe('Uint16Array');
+it('Typed array', () => {
+  assert.strictEqual(t(new Uint16Array(10)), 'Uint16Array');
 });
 
-test('Regex', () => {
-  expect(t(/abc/)).toBe('RegExp');
+it('Regex', () => {
+  assert.strictEqual(t(/abc/), 'RegExp');
 });
