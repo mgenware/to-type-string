@@ -9,7 +9,7 @@ Get type description of a JavaScript variable
 ## Installation
 
 ```sh
-yarn add to-type-string
+npm install to-type-string
 ```
 
 ## Usage

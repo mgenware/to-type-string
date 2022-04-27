@@ -11,12 +11,13 @@ export default function toTypeString(obj: any): string {
       }
       // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
       if (obj.constructor && obj.constructor.name) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-return
         return obj.constructor.name;
       }
     }
     return type;
-  } catch (err) {
-    // tslint:disable-next-line no-console
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
     console.error(`to-type-string error: ${err.message}`);
     return `${obj}`;
   }
