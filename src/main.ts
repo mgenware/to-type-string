@@ -1,6 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function toTypeString(obj: any): string {
   try {
+    if (obj === undefined) {
+      return 'undefined';
+    }
     if (obj === null) {
       return 'null';
     }

@@ -9,6 +9,10 @@ it('null', () => {
   assert.strictEqual(t(null), 'null');
 });
 
+it('undefined', () => {
+  assert.strictEqual(t(undefined), 'undefined');
+});
+
 it('object', () => {
   assert.strictEqual(t({}), 'Object');
 });
